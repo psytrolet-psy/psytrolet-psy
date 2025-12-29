@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valentine Trolet, Psychologue Clinicienne à Paris 8e - Cabinet proche de Saint-Lazare. Consultations sur rendez-vous.">
+    <title>Valentine Trolet | Psychologue Clinicienne - Paris 8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FDF8F4;
+            --color-cream: #F5EBE0;
+            --color-bordeaux: #7D2027;
+            --color-bordeaux-dark: #5E181D;
+            --color-ocre: #6B5B3D;
+            --color-terracotta: #8B3118;
+            --color-orange-doux: #C87F45;
+            --color-text: #3D2A24;
+            --color-text-light: #6B5750;
+            --color-white: #FFFFFF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-accent: 'Cormorant Garamond', Georgia, serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: rgba(253, 251, 249, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: var(--font-accent);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-bordeaux);
+        }
+
+        /* Mobile menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-black);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards 0.2s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-bordeaux);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-accent);
+            font-size: clamp(2.8rem, 5.5vw, 4rem);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+            letter-spacing: 0.02em;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--color-bordeaux);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-bordeaux-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-bordeaux);
+            border: 1px solid var(--color-bordeaux);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bordeaux);
+            color: var(--color-white);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 5%;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-bordeaux);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 400;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--color-cream);
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content {
+            text-align: left;
+        }
+
+        .about-content .section-label,
+        .about-content .section-title {
+            text-align: left;
+        }
+
+        .about-content p {
+            color: var(--color-text-light);
+            margin-bottom: 1.25rem;
+            line-height: 1.9;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-content {
+                text-align: center;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .about-image img {
+                max-width: 250px;
+            }
+        }
+
+        /* Approche Section */
+        .approche-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .approche-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .approche-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 3rem;
+        }
+
+        .approche-intro p {
+            color: var(--color-text-light);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .approche-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .approche-card {
+            background: var(--color-cream);
+            padding: 2rem;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
+        }
+
+        .approche-card:hover {
+            background: var(--color-white);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border-left: 3px solid #6B5B3D;
+        }
+
+        .approche-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .approche-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-ocre);
+            margin-bottom: 1rem;
+        }
+
+        .approche-card p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--color-cream);
+        }
+
+        /* Articles Section */
+        .articles-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .articles-container .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--color-cream);
+            padding: 2rem;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
+        }
+
+        .article-card:hover {
+            background: var(--color-white);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border-left: 3px solid var(--color-terracotta);
+        }
+
+        .article-date {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-ocre);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .article-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--color-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .article-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .article-link {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-bordeaux);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article-link:hover {
+            text-decoration: underline;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        .contact-accroche {
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-terracotta);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-item-content h4 {
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.2rem;
+            color: var(--color-text);
+        }
+
+        .contact-item-content p,
+        .contact-item-content a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-item-content a:hover {
+            color: var(--color-bordeaux);
+        }
+
+        .doctolib-cta {
+            background: var(--color-terracotta);
+            padding: 2.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .doctolib-cta h4 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--color-white);
+            margin-bottom: 0.75rem;
+        }
+
+        .doctolib-cta p {
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-doctolib {
+            background: var(--color-white);
+            color: var(--color-terracotta);
+        }
+
+        .btn-doctolib:hover {
+            background: var(--color-cream);
+            color: var(--color-terracotta);
+        }
+
+        /* Map */
+        .map-container {
+            width: 100%;
+            height: 200px;
+            margin-top: 1.5rem;
+            border: 2px solid #6B5B3D;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-bordeaux-dark);
+            color: var(--color-white);
+            padding: 2.5rem 5%;
+            text-align: center;
+        }
+
+        footer .footer-name {
+            font-family: var(--font-accent);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        footer .footer-title {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        footer .footer-contact {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer .footer-contact a {
+            color: var(--color-white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        footer .footer-contact a:hover {
+            opacity: 1;
+        }
+
+        footer .footer-copy {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            margin-top: 1rem;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .approche-grid {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--color-bg);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                right: 0;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .hero {
+                padding: 6rem 5% 4rem;
+                min-height: auto;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">Valentine Trolet</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#approche">Approche</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">Psychologue Clinicienne</p>
+            <h1>Valentine Trolet</h1>
+            <p class="hero-description">
+                Un espace d'écoute bienveillant et confidentiel pour accueillir 
+                ce qui vous traverse, mettre en mots vos ressentis 
+                et cheminer vers un mieux-être.
+            </p>
+            <div class="btn-group">
+                <a href="https://www.doctolib.fr/psychologue/paris/valentine-trolet" target="_blank" class="btn btn-primary">
+                    Prendre rendez-vous
+                </a>
+                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container reveal">
+            <div class="about-content">
+                <p class="section-label">À propos</p>
+                <h2 class="section-title">Bienvenue dans mon cabinet</h2>
+                <p>
+                    Psychologue clinicienne diplômée de l'École de Psychologues Praticiens (EPP), 
+                    je vous accueille dans mon cabinet situé au cœur du 8ème arrondissement de Paris, 
+                    à proximité de la gare Saint-Lazare.
+                </p>
+                <p>
+                    Je propose un accompagnement psychologique personnalisé aux adultes 
+                    traversant des périodes de questionnement, de transition ou de 
+                    souffrance psychique. Mon approche se veut bienveillante, 
+                    respectueuse de votre rythme et de votre singularité.
+                </p>
+                <p>
+                    Chaque parcours est unique. Ensemble, nous travaillerons à mieux 
+                    comprendre ce qui vous traverse et à trouver vos propres ressources 
+                    pour avancer.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="texture-decorative.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Approche Section -->
+    <section id="approche">
+        <div class="approche-container">
+            <div class="approche-header reveal">
+                <p class="section-label">Mon approche</p>
+                <h2 class="section-title">Une approche intégrative</h2>
+            </div>
+            <div class="approche-intro reveal">
+                <p>
+                    Mon approche est intégrative, s'appuyant sur les apports de la thérapie systémique, 
+                    de la thérapie humaniste et des thérapies cognitives et comportementales (TCC), 
+                    avec une attention portée à la dimension psychodynamique.
+                </p>
+                <p>
+                    En parallèle de mon activité en cabinet, j'exerce en service d'hospitalisation complète 
+                    en psychiatrie à la Clinique de l'Isle (Emeis), située à Crosne, auprès d'adultes et 
+                    d'adolescents. J'y accompagne des personnes traversant des moments de crise, lorsque 
+                    la souffrance psychique devient trop intense pour être apaisée seul·e, notamment dans 
+                    le cadre de troubles dépressifs et de conduites addictives.
+                </p>
+                <p>
+                    Cette double pratique nourrit ma réflexion clinique et me permet de proposer un 
+                    accompagnement ajusté à votre singularité et à vos besoins.
+                </p>
+            </div>
+            <div class="approche-grid">
+                <div class="approche-card reveal">
+                    <h4>Thérapie LI-ICV</h4>
+                    <span class="approche-badge">Intégration du Cycle de la Vie</span>
+                    <p>
+                        Je suis formée à la thérapie LI-ICV, une approche particulièrement efficace 
+                        que je propose dans l'accompagnement thérapeutique.
+                    </p>
+                </div>
+                <div class="approche-card reveal">
+                    <h4>Psychotraumatisme</h4>
+                    <span class="approche-badge">Accompagnement spécialisé</span>
+                    <p>
+                        Accompagnement des personnes ayant vécu des violences verbales, physiques 
+                        ou sexuelles, des accidents ou des deuils traumatiques.
+                    </p>
+                </div>
+                <div class="approche-card reveal">
+                    <h4>Difficultés d'attachement</h4>
+                    <span class="approche-badge">Troubles relationnels</span>
+                    <p>
+                        Troubles affectifs, difficultés relationnelles, sentiment de solitude, 
+                        anxiété et problématiques de confiance en soi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles">
+        <div class="articles-container">
+            <div class="section-header reveal">
+                <p class="section-label">Blog</p>
+                <h2 class="section-title">Articles</h2>
+            </div>
+            <div class="articles-grid">
+                <article class="article-card reveal">
+                    <span class="article-date">29 décembre 2025</span>
+                    <h3>Qu'est-ce que la thérapie LI-ICV ?</h3>
+                    <p>Découvrez cette approche thérapeutique innovante qui permet de traiter les traumatismes en intégrant les souvenirs du passé...</p>
+                    <a href="article-licv.html" class="article-link">Lire la suite</a>
+                </article>
+                <article class="article-card reveal">
+                    <span class="article-date">15 juin 2024</span>
+                    <h3>Automutilations et dissociation : comprendre un lien complexe</h3>
+                    <p>Explorer le lien entre les conduites d'automutilation et les mécanismes dissociatifs pour mieux accompagner la souffrance...</p>
+                    <a href="article-automutilations.html" class="article-link">Lire la suite</a>
+                </article>
+                <article class="article-card reveal">
+                    <span class="article-date">3 septembre 2025</span>
+                    <h3>L'attachement chez l'adulte</h3>
+                    <p>Les troubles de l'attachement se traduisent par des difficultés à établir des relations affectives sécurisantes et stables...</p>
+                    <a href="article-attachement.html" class="article-link">Lire la suite</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-header reveal">
+                <p class="section-label">Contact</p>
+                <h2 class="section-title">Se rencontrer</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Informations pratiques</h3>
+                    <p class="contact-accroche">
+                        Vous avez des questions, vous souhaitez faire un point sur votre situation 
+                        ou prendre rendez-vous ? N'hésitez pas à m'appeler ou m'envoyer un mail.
+                    </p>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div class="contact-item-content">
+                            <h4>Adresse</h4>
+                            <p>57 rue des Mathurins, 75008 Paris</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12h8M12 8v8"/>
+                        </svg>
+                        <div class="contact-item-content">
+                            <h4>Transports</h4>
+                            <p>Métro Saint-Augustin (ligne 9)<br>
+                            Métro Gare Saint-Lazare (lignes 3, 12, 13, 14)<br>
+                            RER Haussmann Saint-Lazare (lignes A, E)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <div class="contact-item-content">
+                            <h4>Téléphone</h4>
+                            <a href="tel:0775794305">07 75 79 43 05</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <div class="contact-item-content">
+                            <h4>Email</h4>
+                            <a href="mailto:psy.trolet@gmail.com">psy.trolet@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <div class="contact-item-content">
+                            <h4>Horaires</h4>
+                            <p>Le samedi au cabinet, rue des Mathurins<br>Sur rendez-vous uniquement</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2164940726!2d2.3216!3d48.8738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3e4f123b1f%3A0x0!2s57%20Rue%20des%20Mathurins%2C%2075008%20Paris!5e0!3m2!1sfr!2sfr!4v1699999999999!5m2!1sfr!2sfr" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="doctolib-cta reveal">
+                    <h4>Prendre rendez-vous</h4>
+                    <p>
+                        Consultations sur rendez-vous uniquement.<br>
+                        Réservez votre créneau en ligne via Doctolib.
+                    </p>
+                    <a href="https://www.doctolib.fr/psychologue/paris/valentine-trolet" target="_blank" class="btn btn-doctolib">
+                        Réserver sur Doctolib
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-name">Valentine Trolet</p>
+        <p class="footer-title">psychologue clinicienne - paris 8</p>
+        <p class="footer-contact">
+            <a href="tel:0775794305">07 75 79 43 05</a> · <a href="mailto:psy.trolet@gmail.com">psy.trolet@gmail.com</a>
+        </p>
+        <p class="footer-copy">© 2024 Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 80) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

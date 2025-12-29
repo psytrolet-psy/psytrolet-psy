@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Qu'est-ce que la thérapie LI-ICV ? Découvrez cette approche thérapeutique innovante - Valentine Trolet, Psychologue Clinicienne">
+    <title>Qu'est-ce que la thérapie LI-ICV ? | Valentine Trolet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FDF8F4;
+            --color-cream: #F5EBE0;
+            --color-bordeaux: #7D2027;
+            --color-bordeaux-dark: #5E181D;
+            --color-ocre: #6B5B3D;
+            --color-terracotta: #8B3118;
+            --color-text: #3D2A24;
+            --color-text-light: #6B5750;
+            --color-white: #FFFFFF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-accent: 'Cormorant Garamond', Georgia, serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(253, 248, 244, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: var(--font-accent);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-bordeaux);
+        }
+
+        /* Article Header */
+        .article-header {
+            padding: 10rem 5% 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-ocre);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-accent);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem 5% 5rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        .article-content h2 {
+            font-family: var(--font-accent);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-content h3 {
+            font-family: var(--font-accent);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 3px solid var(--color-bordeaux);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--color-text);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-bordeaux);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--color-bordeaux-dark);
+        }
+
+        .video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-terracotta);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .video-link:hover {
+            color: var(--color-bordeaux);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-bordeaux-dark);
+            color: var(--color-white);
+            padding: 2.5rem 5%;
+            text-align: center;
+        }
+
+        footer .footer-name {
+            font-family: var(--font-accent);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        footer .footer-title {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        footer .footer-contact {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer .footer-contact a {
+            color: var(--color-white);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        footer .footer-contact a:hover {
+            opacity: 1;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-header {
+                padding: 8rem 5% 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="valentine-trolet-epure.html" class="logo">Valentine Trolet</a>
+        <ul class="nav-links">
+            <li><a href="valentine-trolet-epure.html#about">À propos</a></li>
+            <li><a href="valentine-trolet-epure.html#approche">Approche</a></li>
+            <li><a href="valentine-trolet-epure.html#articles">Articles</a></li>
+            <li><a href="valentine-trolet-epure.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <p class="article-meta">29 décembre 2025</p>
+            <h1>Qu'est-ce que la thérapie LI-ICV ?</h1>
+        </header>
+
+        <div class="article-content">
+            <a href="valentine-trolet-epure.html#articles" class="back-link">
+                ← Retour aux articles
+            </a>
+
+            <p>
+                La thérapie LI-ICV (Lifespan Integration - Intégration du Cycle de la Vie) est une approche 
+                psychothérapeutique développée au début des années 2000 par Peggy Pace aux États-Unis, 
+                puis introduite en France par Joanna Smith et Catherine Clément. Elle permet de traiter 
+                les traumatismes et les blessures d'attachement en s'appuyant sur la capacité naturelle 
+                du cerveau à guérir.
+            </p>
+
+            <h2>Le principe de base</h2>
+
+            <p>
+                L'ICV repose sur l'utilisation d'une ligne du temps composée de souvenirs de la vie du patient, 
+                depuis sa naissance jusqu'à aujourd'hui. Cette liste de souvenirs, lue par le thérapeute, 
+                permet au système corps-esprit de réaliser que le temps a passé et que les événements 
+                difficiles appartiennent au passé.
+            </p>
+
+            <p>
+                Cette méthode permet une intégration neuronale des expériences de vie, aidant le patient 
+                à se sentir plus unifié et ancré dans le présent. Cette thérapie aide à surmonter les 
+                traumatismes en permettant au corps et à l'esprit de comprendre que les événements 
+                douloureux appartiennent au passé.
+            </p>
+
+            <h2>Le concept de présentification</h2>
+
+            <p>
+                La "présentification" désigne le processus par lequel le patient prend conscience, 
+                non seulement intellectuellement mais physiquement, que les traumatismes appartiennent 
+                au passé. Lors d'un traumatisme, une partie de la personne reste "figée" à ce moment 
+                douloureux — c'est la dissociation.
+            </p>
+
+            <p>
+                En répétant la ligne du temps depuis l'événement traumatique jusqu'au présent, le cerveau 
+                et le corps intègrent progressivement que la personne a survécu, que le temps s'est écoulé 
+                et que sa vie est différente aujourd'hui.
+            </p>
+
+            <blockquote>
+                L'ICV permet de montrer au corps et à l'esprit que le passé est terminé et que 
+                le présent est différent.
+            </blockquote>
+
+            <p>
+                Cette présentification s'opère grâce à la neuroplasticité cérébrale : en répétant la ligne 
+                du temps, les zones cérébrales liées à différents moments de la vie s'activent simultanément, 
+                créant de nouveaux circuits neuronaux. Le traumatisme s'intègre ainsi comme un événement révolu.
+            </p>
+
+            <h2>Pour aller plus loin</h2>
+
+            <p>
+                Pour mieux comprendre la thérapie LI-ICV, vous pouvez visionner cette vidéo explicative : 
+                <a href="https://www.youtube.com/watch?v=Mipl5l8WZP4&t=558s" target="_blank" class="video-link">
+                    ▶ Voir la vidéo sur YouTube
+                </a>
+            </p>
+
+            <h2>Pour qui ?</h2>
+
+            <p>
+                La thérapie LI-ICV est particulièrement indiquée pour :
+            </p>
+
+            <ul>
+                <li>Les traumatismes (violences, accidents, deuils traumatiques)</li>
+                <li>Les troubles de l'attachement</li>
+                <li>L'anxiété et la dépression</li>
+                <li>Les difficultés relationnelles</li>
+                <li>Les problématiques de confiance en soi</li>
+            </ul>
+
+            <h2>Comment se déroule une séance ?</h2>
+
+            <p>
+                Lors d'une séance d'ICV, le patient est invité à se connecter à un souvenir ou une 
+                émotion difficile, puis le thérapeute lit la liste des souvenirs (ligne du temps). 
+                Ce processus permet au cerveau de "mettre à jour" les réseaux neuronaux et d'intégrer 
+                l'expérience passée de manière plus apaisée.
+            </p>
+
+            <p>
+                Cette approche est généralement bien tolérée car elle ne nécessite pas de revivre 
+                intensément les traumatismes. Elle est souvent décrite comme une méthode douce 
+                mais profondément transformatrice.
+            </p>
+        </div>
+    </article>
+
+    <footer>
+        <p class="footer-name">Valentine Trolet</p>
+        <p class="footer-title">psychologue clinicienne - paris 8</p>
+        <p class="footer-contact">
+            <a href="tel:0775794305">07 75 79 43 05</a> · <a href="mailto:psy.trolet@gmail.com">psy.trolet@gmail.com</a>
+        </p>
+    </footer>
+</body>
+</html>

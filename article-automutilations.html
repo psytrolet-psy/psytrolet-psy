@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automutilations et dissociation : comprendre un lien complexe - Valentine Trolet, Psychologue Clinicienne">
+    <title>Automutilations et dissociation | Valentine Trolet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FDF8F4;
+            --color-cream: #F5EBE0;
+            --color-bordeaux: #7D2027;
+            --color-bordeaux-dark: #5E181D;
+            --color-ocre: #6B5B3D;
+            --color-terracotta: #8B3118;
+            --color-text: #3D2A24;
+            --color-text-light: #6B5750;
+            --color-white: #FFFFFF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-accent: 'Cormorant Garamond', Georgia, serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.8;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(253, 248, 244, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: var(--font-accent);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-bordeaux);
+        }
+
+        .article-header {
+            padding: 10rem 5% 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-ocre);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-accent);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem 5% 5rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        .article-content h2 {
+            font-family: var(--font-accent);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-content h3 {
+            font-family: var(--font-accent);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 3px solid var(--color-bordeaux);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--color-text);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-bordeaux);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--color-bordeaux-dark);
+        }
+
+        footer {
+            background: var(--color-bordeaux-dark);
+            color: var(--color-white);
+            padding: 2.5rem 5%;
+            text-align: center;
+        }
+
+        footer .footer-name {
+            font-family: var(--font-accent);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        footer .footer-title {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        footer .footer-contact {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer .footer-contact a {
+            color: var(--color-white);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        footer .footer-contact a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-header {
+                padding: 8rem 5% 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="valentine-trolet-epure.html" class="logo">Valentine Trolet</a>
+        <ul class="nav-links">
+            <li><a href="valentine-trolet-epure.html#about">À propos</a></li>
+            <li><a href="valentine-trolet-epure.html#approche">Approche</a></li>
+            <li><a href="valentine-trolet-epure.html#articles">Articles</a></li>
+            <li><a href="valentine-trolet-epure.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <p class="article-meta">15 juin 2024</p>
+            <h1>Automutilations et dissociation : comprendre un lien complexe</h1>
+        </header>
+
+        <div class="article-content">
+            <a href="valentine-trolet-epure.html#articles" class="back-link">
+                ← Retour aux articles
+            </a>
+
+            <p>
+                Les conduites d'automutilation sont souvent mal comprises et peuvent susciter 
+                incompréhension ou jugement. Pourtant, elles s'inscrivent généralement dans une 
+                tentative de régulation émotionnelle, notamment lorsqu'elles sont liées à des 
+                mécanismes dissociatifs.
+            </p>
+
+            <h2>Qu'est-ce que la dissociation ?</h2>
+
+            <p>
+                La dissociation est un mécanisme de défense psychique qui permet de se 
+                "déconnecter" d'une réalité trop douloureuse. Elle peut se manifester par un 
+                sentiment d'irréalité, une impression d'être détaché·e de son corps, ou encore 
+                une absence de ressenti émotionnel.
+            </p>
+
+            <p>
+                Ce mécanisme se met souvent en place lors d'expériences traumatiques, lorsque 
+                la psyché ne peut pas traiter l'intensité de ce qui est vécu. La dissociation 
+                devient alors une protection, mais elle peut persister bien après l'événement 
+                traumatique.
+            </p>
+
+            <h2>Le lien avec l'automutilation</h2>
+
+            <p>
+                Pour certaines personnes, l'automutilation peut être une tentative de :
+            </p>
+
+            <ul>
+                <li>Sortir d'un état dissociatif en se reconnectant à son corps par la douleur physique</li>
+                <li>Transformer une douleur psychique insupportable en douleur physique, plus "gérable"</li>
+                <li>Ressentir quelque chose quand le vide émotionnel devient trop envahissant</li>
+                <li>Reprendre le contrôle sur son corps et ses sensations</li>
+            </ul>
+
+            <blockquote>
+                Les scarifications sont le signe d'une détresse indicible chez l'adolescent, 
+                face à ce débordement les mots viennent à manquer et l'automutilation s'impose 
+                comme réponse pour soulager, maîtriser cette souffrance qui semble ne pas avoir de limite.
+            </blockquote>
+
+            <h2>L'accompagnement thérapeutique</h2>
+
+            <p>
+                Accompagner une personne qui s'automutile nécessite d'abord de comprendre la 
+                fonction de ce comportement dans son économie psychique. Il ne s'agit pas 
+                simplement de "faire arrêter" le comportement, mais de travailler sur ce qui 
+                le sous-tend.
+            </p>
+
+            <p>
+                La thérapie peut aider à :
+            </p>
+
+            <ul>
+                <li>Développer des stratégies alternatives de régulation émotionnelle</li>
+                <li>Travailler sur les traumatismes à l'origine des mécanismes dissociatifs</li>
+                <li>Renforcer la connexion corps-esprit</li>
+                <li>Construire des ressources internes pour faire face à la détresse</li>
+            </ul>
+
+            <p>
+                Des approches comme l'ICV (Intégration du Cycle de la Vie) peuvent être 
+                particulièrement aidantes pour traiter les traumatismes sous-jacents et 
+                réduire les réponses dissociatives.
+            </p>
+        </div>
+    </article>
+
+    <footer>
+        <p class="footer-name">Valentine Trolet</p>
+        <p class="footer-title">psychologue clinicienne - paris 8</p>
+        <p class="footer-contact">
+            <a href="tel:0775794305">07 75 79 43 05</a> · <a href="mailto:psy.trolet@gmail.com">psy.trolet@gmail.com</a>
+        </p>
+    </footer>
+</body>
+</html>
